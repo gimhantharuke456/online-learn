@@ -14,8 +14,9 @@ const config = {
 };
 
 // API methods with correct header usage
-export const fetchUsers = () => axios.get(API_URL, config);
-export const createUser = (userData) => axios.post(API_URL, userData, config);
+export const fetchUsers = () => axios.get(`${API_URL}`, config);
+export const createUser = (userData) =>
+  axios.post(`${API_URL}register`, userData, config);
 export const updateUser = (id, userData) =>
   axios.patch(`${API_URL}${id}`, userData, config);
 export const deleteUser = (id) => axios.delete(`${API_URL}/${id}`, config);

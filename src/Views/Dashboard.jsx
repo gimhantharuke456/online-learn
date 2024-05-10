@@ -10,6 +10,8 @@ import { useSnapshot } from "valtio";
 import state from "../utils";
 import Users from "../Components/Users";
 import Instructors from "../Components/Instructors";
+import Students from "../Components/Students";
+import Contents from "../Components/Contents";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -70,6 +72,8 @@ const Dashboard = () => {
           >
             {snap.activeIndex === 1 && <Users />}
             {snap.activeIndex === 2 && <Instructors />}
+            {snap.activeIndex === 3 && <Students />}
+            {snap.activeIndex === 4 && <Contents />}
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

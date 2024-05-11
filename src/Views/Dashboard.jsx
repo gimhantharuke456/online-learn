@@ -12,6 +12,8 @@ import Users from "../Components/Users";
 import Instructors from "../Components/Instructors";
 import Students from "../Components/Students";
 import Contents from "../Components/Contents";
+import Courses from "../Components/Courses";
+import Payments from "../Components/Payments";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -25,15 +27,6 @@ const Dashboard = () => {
       <Sider collapsible>
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-          <Menu.Item
-            onClick={() => {
-              handleClick(1);
-            }}
-            key="1"
-            icon={<UserOutlined />}
-          >
-            Admins
-          </Menu.Item>
           <Menu.Item
             onClick={() => {
               handleClick(2);
@@ -61,6 +54,24 @@ const Dashboard = () => {
           >
             Content
           </Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              handleClick(5);
+            }}
+            key="5"
+            icon={<FileTextOutlined />}
+          >
+            Courses
+          </Menu.Item>
+          <Menu.Item
+            onClick={() => {
+              handleClick(6);
+            }}
+            key="6"
+            icon={<UserOutlined />}
+          >
+            Payments
+          </Menu.Item>
         </Menu>
       </Sider>
       <Layout className="site-layout">
@@ -70,10 +81,11 @@ const Dashboard = () => {
             className="site-layout-background"
             style={{ padding: 24, minHeight: 360 }}
           >
-            {snap.activeIndex === 1 && <Users />}
             {snap.activeIndex === 2 && <Instructors />}
             {snap.activeIndex === 3 && <Students />}
             {snap.activeIndex === 4 && <Contents />}
+            {snap.activeIndex === 5 && <Courses />}
+            {snap.activeIndex === 6 && <Payments />}
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

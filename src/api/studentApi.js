@@ -17,3 +17,6 @@ export const updateStudent = (id, studentData) => {
 export const deleteStudent = (id) => {
   return axios.delete(`${API_URL}${id}`);
 };
+export const loginStudent = (email, password) => {
+  return axios.post(`${API_URL}login`, { email, password });
+};
